@@ -293,10 +293,10 @@ const audit = {
 
     const result = 'restaurants.reduce((acc, restaurant) {
       if (!acc.hasOwnProperty(restaurant.cuisine)) {
-        acc[restaurant.cuisine] = []
+          return acc[restaurant.cuisine] = []
       }
       if (acc[restaurant.cuisine] === restaurant.cuisine) {
-        acc[restaurant.cuisine].push(restaurant.name)
+          return acc[restaurant.cuisine].push(restaurant.name)
       }
       return acc;
     }, {})';
