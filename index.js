@@ -8,7 +8,7 @@ const audit = {
 
     // What is the value of `this` when we call fn()?
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
 
     return result;
   },
@@ -31,7 +31,7 @@ const audit = {
 
     // What is the value of `this` when we call data.verify())?
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'nameOfObject';
 
     return result;
   },
@@ -40,7 +40,7 @@ const audit = {
 
 
 
-  
+
 
 
   exerciseC() {
@@ -54,7 +54,7 @@ const audit = {
 
     // What is the value of `this` when we call dog.bark();
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'instance of nameOfClassInstance';
 
     return result;
   },
@@ -92,9 +92,12 @@ const audit = {
     // Log D: greeting
     greetingGenerator();
 
-    const result = [{
-      // 'ADD YOUR RESULT HERE';
-    }];
+    const result = [
+      {'D' : 'welcome'},
+      {'A' : 'hi'},
+      {'B' : 'hi'},
+      {'C': 'hi'}
+    ];
 
     return result;
   },
@@ -109,7 +112,7 @@ const audit = {
   exerciseE() {
 
     var shoe = 'heel';
-    // Log A: 
+    // Log A:
 
     function putOnShoe() {
       shoe = 'boot';
@@ -122,9 +125,13 @@ const audit = {
 
     // Log D: shoe
 
-    const result = [{
+    const result = [
+      {'A': 'reference error'},
+      {'C': 'heel'},
+      {'B': 'boot'},
+      {'D': 'boot'}
       // 'ADD YOUR RESULT HERE';
-    }];
+    ];
 
     return result;
   },
@@ -174,7 +181,7 @@ const audit = {
     // e.g.
     // ['Beckon', 'El Five', 'ChoLon', 'Super Mega Bien']
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'restaurants.map(restaurant => restaurant.name)';
 
     return result;
   },
@@ -220,7 +227,7 @@ const audit = {
     ];
 
     // Return an array of objects that include just the name of the restaurant and whether takeout is available
-    
+
     // e.g.
     // [
     //    { restaurant: 'Beckon', takeOut: false },
@@ -228,7 +235,9 @@ const audit = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'restaurants.map(restaurant => {
+      return  {restaurant: restaurant.name, takeOut: restaurant.takeOut};
+    })
 
     return result;
   },
@@ -282,14 +291,22 @@ const audit = {
     //    'Asian Fusion': ['ChoLon']
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'restaurants.reduce((acc, restaurant) {
+      if (!acc.hasOwnProperty(restaurant.cusine)) {
+        acc[restaurant.cuisine] = []
+      }
+      if (acc[restaurant.cuisine] === restaurant.cusine) {
+        acc[restaurant.cuisine].push(restaurant.name)
+      }
+      return acc;
+    }, {})';
 
     return result;
   },
 
   exerciseBonus() {
 
-    // There is a war and nobody knows - the alphabet war! 
+    // There is a war and nobody knows - the alphabet war!
     // There are two groups of hostile letters. The tension between left side letters and right side letters was too high and the war began.
 
     // Write a function that accepts fight string consists of only small letters and return who wins the fight. When the left side wins return 'Left side wins!', when the right side wins return 'Right side wins!', in other case return 'Let's fight again!'.
@@ -318,7 +335,13 @@ const audit = {
     // Fill out functionality below. Your result variable (line 320) is already set up and does not need to be modified
 
     function alphabetWar(fight) {
+      let obj1 = {w: 4, p: 3, b: 2, s: 1};
+      let obj2 = {m: 4, q: 3, d: 2, z: 1};
 
+      //??????
+      //split incoming parameter
+      // reference value of split parameter to values in objects
+      //based on total from each obj return sting of winner
     }
 
 
@@ -329,7 +352,7 @@ const audit = {
       four: alphabetWar('wwwwwwz')
     };
 
-    return result;    
+    return result;
   }
 };
 
