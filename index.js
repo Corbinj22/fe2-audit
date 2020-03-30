@@ -292,10 +292,10 @@ const audit = {
     // }
 
     const result = 'restaurants.reduce((acc, restaurant) {
-      if (!acc.hasOwnProperty(restaurant.cusine)) {
+      if (!acc.hasOwnProperty(restaurant.cuisine)) {
         acc[restaurant.cuisine] = []
       }
-      if (acc[restaurant.cuisine] === restaurant.cusine) {
+      if (acc[restaurant.cuisine] === restaurant.cuisine) {
         acc[restaurant.cuisine].push(restaurant.name)
       }
       return acc;
@@ -341,7 +341,7 @@ const audit = {
       //??????
       //split incoming parameter
       // reference value of split parameter to values in objects
-      //based on total from each obj return sting of winner
+      //based on total from each obj return string of winner
     }
 
 
